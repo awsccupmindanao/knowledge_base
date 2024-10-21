@@ -3,7 +3,7 @@ hide:
   - navigation
   - toc
 ---
-
+<!--Di lagi muganaw ang css sa github preview, sa VSCode nuon muwork hahaha-->
 <link href="index.css" rel="stylesheet"></link>
 
 <div class='main-container'>
