@@ -57,7 +57,7 @@
 
 #workshop > img {
   position: relative;
-  width: 300px;
+  width: 100vw;
 }
 
 #title {
