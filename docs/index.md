@@ -3,6 +3,7 @@ hide:
   - navigation
   - toc
 ---
+
 <!--Di lagi muganaw ang css sa github preview, sa VSCode nuon muwork hahaha-->
 <link href="index.css" rel="stylesheet"></link>
 
@@ -27,29 +28,38 @@ hide:
     </div>
   </div>
 
-  <h1>Explore our Workshops</h1>
+  <h1><a href=''>Explore our Workshops</a></h1>
   <!--Temporary ra ng links sa pics hahaha-->
   <div class='parent-container' id='body'>
-    <div class='card' id='workshop'>
-      <img src="https://scontent.fdvo5-1.fna.fbcdn.net/v/t39.30808-6/457263170_122149294586252999_4148721853945273900_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeH9Wp6NK7PHdeHERmhkvyRMPcSPVg4TCUA9xI9WDhMJQDp4LSO58TgTIGclUJpyTSUxupz-XSkPtPgLleLMc9Q-&_nc_ohc=-6ONAV5WlmsQ7kNvgHItTZv&_nc_zt=23&_nc_ht=scontent.fdvo5-1.fna&_nc_gid=AtPkkmqeaO5xDq6woLxCWy8&oh=00_AYDbpqDcqERRudVAb3k_3yVUtqikjquLqW_SExlCrUjC6A&oe=671C88EE" alt="Workshop 1">
-    </div>
-    <div class='card' id='workshop'>
-      <img src="https://scontent.fdvo5-1.fna.fbcdn.net/v/t39.30808-6/463323861_122159203502252999_2311708440502643717_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHUzFPkUipbawAxQa6tVCwu2SPAKbyz887ZI8ApvLPzzkOwLqAaAlcZdV680-vwwZnwCMXO_5lY4vNUZgG71fZz&_nc_ohc=IcgvZY-AKwwQ7kNvgG_8WCa&_nc_zt=23&_nc_ht=scontent.fdvo5-1.fna&_nc_gid=AAn0lSauYAB3CxlyCghPG3h&oh=00_AYDhhwVgDhitUZqXB9PF2Q-VV7fI0_iEMjNAs2SeYHY8DA&oe=671C952A" alt="Workshop 1">
-    </div>
-    <div class='card' id='workshop'>
-      <h2>Coming Soon</h2>
-    </div>
-    <div class='card' id='workshop'>
-      <h2>Coming Soon</h2>
-    </div>
-    <div class='card' id='workshop'>
-      <h2>Coming Soon</h2>
-    </div>
-    <div class='card' id='workshop'>
-      <h2>Coming Soon</h2>
-    </div>
-    <div class='card' id='workshop'>
-      <h2>Coming Soon</h2>
-    </div>
+    <a href=''>
+      <div class='card' id='workshop'>
+        <img src="https://scontent.fdvo5-1.fna.fbcdn.net/v/t39.30808-6/457263170_122149294586252999_4148721853945273900_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeH9Wp6NK7PHdeHERmhkvyRMPcSPVg4TCUA9xI9WDhMJQDp4LSO58TgTIGclUJpyTSUxupz-XSkPtPgLleLMc9Q-&_nc_ohc=-6ONAV5WlmsQ7kNvgHItTZv&_nc_zt=23&_nc_ht=scontent.fdvo5-1.fna&_nc_gid=AtPkkmqeaO5xDq6woLxCWy8&oh=00_AYDbpqDcqERRudVAb3k_3yVUtqikjquLqW_SExlCrUjC6A&oe=671C88EE" alt="Workshop 1">
+      </div>
+    </a>
+    <a href=''>
+      <div class='card' id='workshop'>
+        <img src="https://scontent.fdvo5-1.fna.fbcdn.net/v/t39.30808-6/463323861_122159203502252999_2311708440502643717_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHUzFPkUipbawAxQa6tVCwu2SPAKbyz887ZI8ApvLPzzkOwLqAaAlcZdV680-vwwZnwCMXO_5lY4vNUZgG71fZz&_nc_ohc=IcgvZY-AKwwQ7kNvgG_8WCa&_nc_zt=23&_nc_ht=scontent.fdvo5-1.fna&_nc_gid=AAn0lSauYAB3CxlyCghPG3h&oh=00_AYDhhwVgDhitUZqXB9PF2Q-VV7fI0_iEMjNAs2SeYHY8DA&oe=671C952A" alt="Workshop 1">
+      </div>
+    </a>
+    <a href=''>
+      <div class='card' id='workshop'>
+        <h2>Coming Soon</h2>
+      </div>
+    </a>
+    <a href=''>
+      <div class='card' id='workshop'>
+        <h2>Coming Soon</h2>
+      </div>
+    </a>
+    <a href=''>
+      <div class='card' id='workshop'>
+        <h2>Coming Soon</h2>
+      </div>
+    </a>
+    <a href=''>
+      <div class='card' id='workshop'>
+        <h2>Coming Soon</h2>
+      </div>
+    </a>
   </div>
 </div>
