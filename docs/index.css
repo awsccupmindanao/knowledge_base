@@ -32,16 +32,25 @@
   position: relative;
   border-radius: 25px;
   background-color: rgba(150, 100, 255, 0.33);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    135deg,
+    rgb(176, 99, 175) 20%,
+    rgb(62, 50, 193) 100%
+  );
   height: fit-content;
   width: fit-content;
+  color: white;
   text-align: center;
   align-content: center;
   box-sizing: border-box;
+  transition: background-color 0.5s, transform 0.5s;
 }
 
 .card:hover {
   background-color: rgba(200, 150, 255, 0.45);
-  transition: background-color 0.5s;
+  transform: translateY(-5px);
+  transition: background-color 0.5s, transform 0.5s;
 }
 
 .card:active {
@@ -74,6 +83,16 @@
   padding: 10px;
 }
 
+a,
+a:hover,
+a:active,
+a:focus,
+h1,
+h2 {
+  text-decoration: none;
+  outline: 0;
+  color: white;
+}
 /* Media Queries */
 
 /* Mobile Devices */
@@ -94,8 +113,8 @@
   #title,
   #mission,
   #vision {
-    max-width: 70vw;
-    min-width: 70vw;
+    max-width: 60vw;
+    min-width: 60vw;
   }
 
   .child-container {
@@ -107,6 +126,11 @@
   #workshop {
     height: 40vw;
     width: 60vw;
+  }
+
+  h1,
+  h2 {
+    text-align: center;
   }
 }
 
@@ -141,6 +165,11 @@
   #workshop {
     height: 25vw;
     width: 35vw;
+  }
+
+  h1,
+  h2 {
+    text-align: center;
   }
 }
 
