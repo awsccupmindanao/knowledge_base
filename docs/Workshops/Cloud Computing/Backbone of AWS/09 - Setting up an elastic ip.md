@@ -41,12 +41,49 @@
 ![](img/EIA/EIA-06-01.png)
 
 
-### Step 4: Test the Elastic IP
+### Step 4: Test the Elastic IP using web browser.
 1. Open a web browser.
 2. Enter the Elastic IP address in the address bar.
 3. If a web server is running on your instance, you should see the expected response.
 
 ![](img/EIA/EIA-07.png)
+
+### Step 5: Testing the Elastic IP by comparing it with the Public IP
+
+- The public IP address of an EC2 instance can change when the instance is stopped and started, while an Elastic IP remains the same until you release it.
+
+#### Testing the Public IP
+
+1. Find an instance with a public IP address. (without an Elastic IP)
+
+2. Check the public IP address of the instance.
+
+![](img/EIA/EIA-13.png)
+
+`47.129.192.44` is the public IP address of the instance.
+
+3. Stop the instance.
+
+![](img/EIA/EIA-14.png)
+
+4. Start it again and watch the public IP address change.
+
+![](img/EIA/EIA-15.png)
+
+#### Testing the Elastic IP
+
+1. Find the instance with an Elastic IP address.
+
+![](img/EIA/EIA-16.png)
+
+2. Stop the instance.
+
+![](img/EIA/EIA-17.png)
+
+3. Start it again and check the Elastic IP address. It should remain the same.
+
+![](img/EIA/EIA-18.png)
+
 
 ## Cleanup
 1. If you no longer need the Elastic IP, go back to the **Elastic IPs** section.

@@ -140,7 +140,8 @@ This is mine, lets watch yours!
 
 Copy paste this to vim
 
-```
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>

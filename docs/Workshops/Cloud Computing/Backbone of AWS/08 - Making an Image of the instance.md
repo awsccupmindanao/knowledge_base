@@ -26,9 +26,12 @@ An Amazon Machine Image (AMI) is an image that provides the software that is req
 
 ![](img/AMI/AMI-01.png)
 
-AMIs are the foundation for launching EC2 instances, and they provide a quick and efficient way to launch instances with pre-configured software and settings. By creating custom AMIs, you can capture the configuration of an instance and use it to launch identical instances in the future.
+AMIs are the foundation for launching EC2 instances, and they provide a quick and efficient way to launch instances with pre-configured software and settings. This is throua a process called **Image Builder**.
+By creating custom AMIs, you can capture the configuration of an instance and use it to launch identical instances in the future.
 
 You can launch multiple instances from a single AMI when you require multiple instances with the same configuration. 
+
+Image Builder is offered at no cost, other than the cost of the underlying AWS resources used to create store ang share the images.
 
 ## Creating a Pre-built AMI from an Instance
 
