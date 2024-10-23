@@ -25,7 +25,10 @@
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-content: center;
   font-size: 15px;
+  text-align: center;
+  gap: 15px;
 }
 
 .card {
@@ -58,29 +61,25 @@
   transition: background-color 0.1s;
 }
 
-#workshop {
-  height: 15vw;
+#big-card {
+  width: 50vw;
+  padding: 10px;
+}
+
+#medium-card {
+  height: 17vw;
+  width: 30vw;
+  padding: 10px;
+}
+#small-card {
+  height: 11vw;
   width: 20vw;
   overflow: hidden;
 }
 
-#workshop > img {
+#small-card > img {
   position: relative;
   width: 100vw;
-}
-
-#title {
-  max-width: 50vw;
-  min-width: 50vw;
-  padding: 10px;
-}
-
-#mission,
-#vision {
-  max-width: 30vw;
-  min-width: fit-content;
-  min-height: 49%;
-  padding: 10px;
 }
 
 a,
@@ -110,22 +109,24 @@ h2 {
     grid-template-columns: 1fr;
   }
 
-  #title,
-  #mission,
-  #vision {
-    max-width: 60vw;
-    min-width: 60vw;
+  #big-card {
+    width: 60vw;
+  }
+
+  #medium-card {
+    height: 34vw;
+    width: 60vw;
+  }
+
+  #small-card {
+    height: 34vw;
+    width: 60vw;
   }
 
   .child-container {
     flex-direction: row;
     justify-content: center;
     gap: 20px;
-  }
-
-  #workshop {
-    height: 40vw;
-    width: 60vw;
   }
 
   h1,
@@ -149,22 +150,24 @@ h2 {
     grid-template-columns: 1fr 1fr;
   }
 
-  #title,
-  #mission,
-  #vision {
-    max-width: 70vw;
-    min-width: 70vw;
+  #big-card {
+    width: 70vw;
+  }
+
+  #medium-card {
+    height: 39vw;
+    width: 70vw;
+  }
+
+  #small-card {
+    height: 20vw;
+    width: 35vw;
   }
 
   .child-container {
     flex-direction: row;
     justify-content: center;
     gap: 20px;
-  }
-
-  #workshop {
-    height: 25vw;
-    width: 35vw;
   }
 
   h1,
@@ -183,7 +186,7 @@ h2 {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-  #workshop {
+  #small-card {
     height: 15vw;
     width: 25vw;
   }
