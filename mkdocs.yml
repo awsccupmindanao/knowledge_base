@@ -37,12 +37,12 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
-  
+
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
-      pygments_lang_class: true 
+      pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - admonition
@@ -55,7 +55,7 @@ markdown_extensions:
   - attr_list
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg 
+      emoji_generator: !!python/name:materialx.emoji.to_svg
 
 extra:
   generator: false
@@ -67,3 +67,6 @@ extra:
       link: https://www.facebook.com/awscc.up
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/company/awscc-upmin/
+
+extra_css:
+  - index.css
