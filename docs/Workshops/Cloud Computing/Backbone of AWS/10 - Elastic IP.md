@@ -15,10 +15,10 @@ An Elastic IP address (EIP) is a static, public IPv4 address in AWS, designed fo
 
 ## Important Considerations
 
-- **Single Association**: Each EIP can be attached to one instance or network interface at a time. However, it can be moved to another as needed.
-- **Automatic IP Release**: Associating an EIP with an instance's primary network interface (eth0) releases its existing public IPv4 address back to AWS.
-- **IPv4 Limitation**: AWS limits users to five Elastic IPs per region; using a NAT device is recommended to conserve them.
-- **IPv6 Support**: Currently, EIPs support only IPv4, not IPv6.
+- **Single Association**: Each EIP can be attached to one instance or network interface at a time. However, it can be moved to another as needed.  
+- **Automatic IP Release**: Associating an EIP with an instance's primary network interface (eth0) releases its existing public IPv4 address back to AWS.  
+- **IPv4 Limitation**: AWS limits users to five Elastic IPs per region; using a NAT device is recommended to conserve them.  
+- **IPv6 Support**: Currently, EIPs support only IPv4, not IPv6.  
 
 ## Security and Access
 
@@ -27,16 +27,18 @@ EIPs are accessible from the internet when allowed by the instance’s security 
 ## Cost and Tagging
 
 Elastic IPs incur charges when not associated with a running instance. Tags can be applied to EIPs for tracking usage costs in AWS Cost Explorer:
-- **Active IP Costs**: Costs can be tracked under `PublicIPv4InUseAddress`.
-- **Idle IP Costs**: EIPs attached to stopped instances are considered idle and can be tracked under `PublicIPv4IdleAddress`. AWS charges around $0.005 per hour (approximately $3.60 per month) for each Elastic IP address that is allocated but not associated with a running instance.
-- **Additional Elastic IPs**: AWS allows one Elastic IP address to be associated with a running instance at no charge, but additional Elastic IPs associated with the same instance incur a cost of about $0.005 per hour.
-- **IP Remapping:** Frequent remapping of Elastic IPs (i.e., more than 100 times per month) can incur additional costs.
+- **Active IP Costs**: Costs can be tracked under `PublicIPv4InUseAddress`.  
+- **Idle IP Costs**: EIPs attached to stopped instances are considered idle and can be tracked under `PublicIPv4IdleAddress`. AWS charges around $0.005 per hour (approximately $3.60 per month) for each Elastic IP address that is allocated but not associated with a running instance.  
+- **Additional Elastic IPs**: AWS allows one Elastic IP address to be associated with a running instance at no charge, but additional Elastic IPs associated with the same instance incur a cost of about $0.005 per hour.  
+- **IP Remapping:** Frequent remapping of Elastic IPs (i.e., more than 100 times per month) can incur additional costs.  
 
 > Note: Tags must be activated for cost tracking in AWS Cost Explorer, and it may take up to 24 hours for the tags to appear in the cost allocation tags page.
 
 ## Regional Availability
 
 Elastic IP addresses are regional, and users can select a network border group to limit CIDR blocks to a specific region, optimizing latency and availability.
+
+*Classless Inter-Domain Routing (CIDR) is an IP address allocation method that improves data routing efficiency on the internet.*
 
 ### Bring Your Own IP (BYOIP)
 
