@@ -69,7 +69,8 @@ Amazon EC2 Auto Scaling monitors the health of each instance in your Auto Scalin
 A more advanced way to scale your resources, using dynamic scaling, lets you define a scaling policy that dynamically resizes your Auto Scaling group to meet changes in demand.
 
 
-![](img/ASGC/ASG-02.png)
+![](img/ASGC/ASG-02.png)  
+  
 ***Fig. Dynamic AWS EC2 Autoscaling***
 
 ### **Scale proactively**
