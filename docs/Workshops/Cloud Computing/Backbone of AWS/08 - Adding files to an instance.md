@@ -142,6 +142,63 @@ http://<your-public-ipv4-address>
 
 If everything is set up correctly, you should now see the images from your S3 bucket displayed on your website.
 
+
+#### Optional: Adding files from local machine to EC2 instance.
+
+If you want to add files from your local machine to your EC2 instance, you can use the `scp` command. Here’s an example:
+
+```
+scp -i <your-key-pair>.pem /path/to/local/file ec2-user@<Public DNS>:/path/to/remote/directory
+```
+
+Remember this command requires the path to your key pair, the path to your local file, the username of your EC2 instance (e.g., ec2-user), the Public DNS of your instance, and the path to the remote directory on your instance.
+
+**Additional notes: we will be doing these commands to the wsl terminal instead of the ec2 instance**
+
+1. Keypair - The key pair you use to connect to your instance. For our case we used `keypair.pem`
+
+![](img/CTYI/CTYI-05.png)
+
+2. Local file - The path to the file you want to transfer. For example, `/home/Davenats/Peach.jpg`
+   
+![](img/AFTI/AFTI-26.png)
+
+3. Username - The username of your EC2 instance. For Amazon Linux, it is `ec2-user`.
+4. Public DNS - The Public DNS of your instance. You can find this in the EC2 Console.
+
+You can find these both in here
+
+![](img/CTYI/CTYI-07.png) 
+
+5. Remote directory - The path to the directory on your instance where you want to store the file. For example, `:`  
+
+We will not use /var/www/html as the directory to store the file as it needs root access to write files in that directory. Instead, we will use the home directory of the ec2-user.
+
+**Completing this we have**
+
+```
+scp -i keypair.pem Peach.jpg ec2-user@ec2-13-229-248-87.ap-southeast-1.compute.amazonaws.com:
+```
+
+![](img/AFTI/AFTI-27.png)
+
+Lets verify if the file is transferred to the ec2 instance
+
+![](img/AFTI/AFTI-28.png)
+  
+We will now transfer the file from the home directory of the ec2-user to the /var/www/html directory. Where the apache server can access the file.
+
+```
+sudo mv /home/ec2-user/Peach.jpg /var/www/html/
+```
+
+![](img/AFTI/AFTI-29.png)
+
+Verify if the file is transferred to the /var/www/html directory
+
+![](img/AFTI/AFTI-30.png)
+
+
 #### Cleanup
 - Remember to delete the IAM role and S3 bucket if you no longer need them to avoid unnecessary charges.
 
