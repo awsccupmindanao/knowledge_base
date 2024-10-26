@@ -1,4 +1,4 @@
-# Workshop: Expanding an EBS Volume in AWS
+# Expanding an EBS Volume
 
 ## Step 1: Modify the EBS Volume in the AWS Console
 

@@ -49,25 +49,25 @@ You can create and manage your Amazon EBS resources using the following interfac
 - Amazon EC2 Query API
 - AWS SDKs
 
-# Pricing
+## Pricing
 Pricing Calculator - https://calculator.aws/#/createCalculator/EBS 
 
-# Amazon EBS provides the following volume types: 
+## Amazon EBS provides the following volume types: 
 
-## General Purpose SSD (gp2 and gp3) and Provisioned IOPS SSD (io1 and io2). 
+### General Purpose SSD (gp2 and gp3) and Provisioned IOPS SSD (io1 and io2). 
 - SSD-backed volumes are optimized for transactional workloads involving frequent read/write operations with small I/O size, where the dominant performance attribute is IOPS.
 
-## Throughput Optimized HDD (st1), Cold HDD (sc1) 
+### Throughput Optimized HDD (st1), Cold HDD (sc1) 
 - HDD-backed volumes are optimized for large streaming workloads where the dominant performance attribute is throughput. HDD volume types include Throughput Optimized HDD and Cold HDD.
 
-## Magnetic (standard). 
+### Magnetic (standard). 
 - Magnetic (standard) volumes are previous generation volumes that are backed by magnetic drives. They are suited for workloads with small datasets where data is accessed infrequently and performance is not of primary importance. 
 
-# Basic Steps
+## Basic Steps
 
 ![](img/EBS/EBS-03.png)
 
-# Features and benefits of Amazon EBS volumes
+## Features and benefits of Amazon EBS volumes
 - **Data availability.** When you create an EBS volume, it is automatically replicated within its Availability Zone to prevent data loss due to failure of any single hardware component.
 
 - **Data persistence.** An EBS volume is off-instance storage that can persist independently from the life of an instance. You continue to pay for the volume usage as long as the data persists.
@@ -76,8 +76,7 @@ Pricing Calculator - https://calculator.aws/#/createCalculator/EBS
 - **Data security.** 
 
 - **Snapshots.** Amazon EBS provides the ability to create snapshots (backups) of any EBS volume and write a copy of the data in the volume to Amazon S3, where it is stored redundantly in multiple Availability Zones. 
-
-## 
+ 
 - The volume does not need to be attached to a running instance in order to take a snapshot. As you continue to write data to a volume, you can periodically create a snapshot of the volume to use as a baseline for new volumes. 
 
 - These snapshots can be used to create multiple new EBS volumes or move volumes across Availability Zones. Snapshots of encrypted EBS volumes are automatically encrypted.
@@ -92,7 +91,7 @@ Pricing Calculator - https://calculator.aws/#/createCalculator/EBS
 
 ![](img/EBS/EBS-04.jpg)
 
-# Volume Lifecycle: Attach an EBS volume to multiple EC2 instances using Multi-Attach
+## Volume Lifecycle: Attach an EBS volume to multiple EC2 instances using Multi-Attach
 Amazon EBS Multi-Attach enables you to attach a single Provisioned IOPS SSD (io1 or io2) volume to multiple instances that are in the same Availability Zone. You can attach multiple Multi-Attach enabled volumes to an instance or set of instances.
 
 - Multi-Attach makes it easier for you to achieve higher application availability in applications that manage concurrent write operations.
@@ -101,15 +100,15 @@ Amazon EBS Multi-Attach enables you to attach a single Provisioned IOPS SSD (io1
 
 - There are no additional charges for using Amazon EBS Multi-Attach. You are billed the standard charges that apply to Provisioned IOPS SSD (io1 and io2) volumes.
 	
-# Migrate Amazon EBS volumes from gp2 to gp3
+## Migrate Amazon EBS volumes from gp2 to gp3
 The standard across many AWS services (including Amazon EC2) is gp2. The performance is closely coupled with the size of the volume. For every 1 GB of capacity, gp2 volumes get 3 IOPS of performance. That is, a 2,000 GB gp2 volume is capable of 6,000 IOPS.  The third generation of general purpose SSDs, called gp3. For gp3 volumes, performance can be customized independently from the storage capacity. This enables even small capacity volumes to achieve performance capabilities up to 16,000 IOPS and 1,000 Mb/s throughput.
 
 *Note: IOPS are a unit of measure representing input/output operations per second.*
 
-## Cost Impact
+### Cost Impact
 - For gp2 volumes, pricing is based on provisioned capacity at $0.10 per GiB-month. For gp3 volumes, have a capacity price at $0.08 per GiB-month (20 percent less expensive than gp2) and separate costs for IOPS at $0.005 per provisioned IOPS-month over 3,000 and $0.04 per provisioned MiBs-month over 125 MiBs for throughput.
 
-# Modify Amazon EBS snapshots
+## Modify Amazon EBS snapshots
 
 Deleting EBS volumes and managing the retention and archiving of snapshots is an important aspect to control costs from the start. You can back up the data on your EBS volumes to Amazon Simple Storage Service (Amazon S3) by taking point-in-time snapshots. 
 
@@ -122,20 +121,20 @@ Charges for EBS snapshots are calculated by the gigabyte-month. You're billed fo
 - **Standard tier –** You have a volume that's storing 100 GB of data. You're billed for the full 100 GB of data for the first snapshot (snap A). At the time of the next snapshot (snap B), you have 105 GB of data. You're then billed for only the additional 5 GB of storage for incremental snap B.
 - **Archive tier –** You archive snap B. The snapshot is then moved to the Archive tier, and you're billed for the full 105 GB snapshot block.
 
-## Cost Impact
+### Cost Impact
 - Charges for EBS volumes and snapshots are managed separately. The following table compares the standard and archive tiers per month at just 50 TB of usage. Even at this lower scale it's still thousands of dollars of savings annually.
 
 ![](img/EBS/EBS-05.jpg)
 
-# Delete unattached Amazon EBS volumes
+## Delete unattached Amazon EBS volumes
 Unattached (orphaned) EBS volumes can lead to unnecessary storage costs in your AWS environment.
 - ***It's a best practice to have a process in place to continually review the usage of EBS volumes.***
 
-## Cost impact
+### Cost impact
 - Unattached EBS volumes, also referred to as unused or orphaned volumes, incur the same charges as attached volumes based on the provisioned storage size and storage type. Although it's only 0.10 per GB-month, it's crucial to recognize that the accumulation of unused EBS volumes can result in significant costs over time.
 
 
-# Cost optimization recommendations
+## Cost optimization recommendations
 
 You can use AWS to easily automate the deletion of unattached EBS volumes. 
 
@@ -143,11 +142,11 @@ You can use AWS to easily automate the deletion of unattached EBS volumes.
 
 - You can also use these AWS services to automate the cleanup process at scale.
 
-# Amazon EBS Volume Lifecycle
+## Amazon EBS Volume Lifecycle
 
 ![](img/EBS/EBS-06.png)
 
-# Elastic File System (EFS)
+## Elastic File System (EFS)
 Amazon EFS provides scalable file storage for use with Amazon EC2. You can use an EFS file system as a common data source for workloads and applications running on multiple instances. 
 
 - EFS is a fully managed, scalable, elastic file storage service that can be shared across multiple EC2 instances.
@@ -170,7 +169,7 @@ Features:
 
 - **Durability:** Data is redundantly stored across multiple Availability Zones, ensuring high availability and durability.
 
-# EBS Lifecycle Manager
+## EBS Lifecycle Manager
 
 You can use Amazon Data Lifecycle Manager to automate the creation, retention, and deletion of EBS snapshots and EBS-backed AMIs. 
 
@@ -180,11 +179,11 @@ Your AWS account has the following quotas related to Amazon Data Lifecycle Manag
 
 ![](img/EBS/EBS-08.png)
 
-# **Features:**
+## **Features:**
 - **Automation:** Set up rules to automatically create snapshots or delete old ones based on age or other factors.
 
 - **Cost Management:** Ensure that you only keep the snapshots or volumes you need, helping you optimize storage costs.
 
 - **Compliance:** Retain snapshots according to your compliance or data retention requirements.
 
-- **Retention Policies:** Specify how many snapshots to keep, and automatically delete older ones when a new one is created.V
+- **Retention Policies:** Specify how many snapshots to keep, and automatically delete older ones when a new one is created.
