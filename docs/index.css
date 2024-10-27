@@ -94,7 +94,6 @@
   height: calc(15vw - 20px);
   width: 26vw;
   padding: 20px;
-  background-blend-mode: overlay;
 }
 #small-card {
   height: 9vw;
@@ -129,17 +128,6 @@
 
 #big-card > h2 {
   margin-bottom: -10px;
-}
-
-a,
-a:hover,
-a:active,
-a:focus,
-h1,
-h2 {
-  text-decoration: none;
-  outline: 0;
-  color: white;
 }
 
 .title {
@@ -195,8 +183,8 @@ h2 {
     gap: 20px;
   }
 
-  h1,
-  h2 {
+  .main-container h1,
+  .main-container h2 {
     text-align: center;
   }
 }
