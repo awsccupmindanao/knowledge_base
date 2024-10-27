@@ -13,11 +13,11 @@
 .parent-container {
   display: grid;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 10px;
 }
 
 #heading {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
 }
 
 #body {
@@ -27,13 +27,22 @@
 
 .child-container {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
   align-content: center;
   font-size: 15px;
+  max-height: 30vw;
+}
+
+.scroll-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
   text-align: center;
-  gap: 15px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 100%;
+  gap: 20px;
+  padding: 10px;
 }
 
 .card {
@@ -68,18 +77,24 @@
 
 #big-card {
   width: 100%;
-  padding: 10px;
+  max-height: 30vw;
+  padding: 20px 20px 200px 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 #big-card > h1 {
   padding-top: 15px;
-  margin-bottom: -5px;
 }
 
 #medium-card {
-  height: 17vw;
-  width: 30vw;
-  padding: 10px;
+  height: calc(15vw - 20px);
+  width: 26vw;
+  padding: 20px;
+  background-blend-mode: overlay;
 }
 #small-card {
   height: 9vw;
@@ -88,13 +103,32 @@
   font-size: 12px;
 }
 
-#small-card > img {
-  position: relative;
-  width: 100vw;
+.computing {
+  background: url("./Workshops/Cloud Computing/Backbone of AWS/img/banner.png")
+    no-repeat center center;
+  background-size: cover;
 }
 
-.card > h2 {
+.security {
+  background: url("./Workshops/Security/First Line Of Defense/img/banner.png")
+    no-repeat center center;
+  background-size: cover;
+}
+
+.coming-soon {
+  background: rgb(17, 15, 17, 0.5);
+}
+
+#medium-card > h2 {
   margin-bottom: 30px;
+}
+
+#medium-card:hover {
+  opacity: 90%;
+}
+
+#big-card > h2 {
+  margin-bottom: -10px;
 }
 
 a,
@@ -114,20 +148,33 @@ h2 {
   height: 30px;
   font-weight: bolder;
 }
+
+.main-container p {
+  font-size: 12px;
+}
+
+#logo {
+  width: 15vw;
+}
 /* Media Queries */
 
 /* Mobile Devices */
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   #heading {
     grid-template-columns: 1fr;
     justify-items: center;
   }
 
   #body {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #logo {
+    width: 125px;
   }
 
   #big-card {
+    max-height: 400px;
     width: 60vw;
   }
 
@@ -144,6 +191,7 @@ h2 {
   .child-container {
     flex-direction: row;
     justify-content: center;
+    max-height: fit-content;
     gap: 20px;
   }
 
@@ -154,23 +202,29 @@ h2 {
 }
 
 /* Medium Screen */
-@media (min-width: 600px) and (max-width: 900px) {
+@media (min-width: 700px) and (max-width: 1050px) {
   #heading {
     grid-template-columns: 1fr;
     justify-items: center;
   }
 
   #body {
+    display: grid;
     grid-template-columns: 1fr 1fr;
   }
 
+  #logo {
+    width: 150px;
+  }
+
   #big-card {
+    max-height: 325px;
     width: 70vw;
   }
 
   #medium-card {
-    height: 39vw;
-    width: 70vw;
+    height: 19vw;
+    width: 35vw;
   }
 
   #small-card {
@@ -181,6 +235,7 @@ h2 {
   .child-container {
     flex-direction: row;
     justify-content: center;
+    max-height: fit-content;
     gap: 20px;
   }
 
@@ -191,7 +246,7 @@ h2 {
 }
 
 /* Tablet Devices */
-@media (min-width: 900px) and (max-width: 1300px) {
+@media (min-width: 1050px) and (max-width: 1300px) {
   #body {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -201,9 +256,14 @@ h2 {
     width: 25vw;
   }
 
+  #big-card {
+    max-height: 30vw;
+  }
+
   .child-container {
+    max-height: 30vw;
     flex-direction: row;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
   }
 }
