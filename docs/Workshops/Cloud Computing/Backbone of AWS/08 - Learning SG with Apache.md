@@ -123,6 +123,54 @@ Save the changes.
 
 ![](img/LGWA/LGWA-17.png)
 
+## 12.1 Configuring Security Group using AWS CLI
+
+1. **Describe the Security Group**:
+   - Run the following command to describe the security group:
+
+     ```bash
+     aws ec2 describe-security-groups
+     ```  
+Find the security group ID that you want to modify. In our case, the security group name is `launch-wizard-1`.
+
+![](img/LGWA/LGWA-20.png)
+
+As you can see it already had permission to part 80 and port 22. Those are for HTTP and SSH respectively.
+
+Find its security group ID, which is in my case is `sg-0c1b0b8939dd8ba1a`.
+
+![](img/LGWA/LGWA-21.png)
+
+copy this to a text file for later use.
+
+press `q` to exit the output.
+
+2. **Update the Security Group**:
+   - What if we want to add a new inbound rule for HTTPS (port 443)? Run the following command:
+  
+ ```bash
+aws ec2 authorize-security-group-ingress \
+  --group-id <your-security-groupID> \
+  --protocol tcp \
+  --port 443 \
+  --cidr 0.0.0.0/0
+ ```
+
+![](img/LGWA/LGWA-22.png)
+
+3. **Verify the Changes**:
+   - Run the following command to verify the changes:
+
+     ```bash
+     aws ec2 describe-security-groups
+     ```
+
+![](img/LGWA/LGWA-23.png)
+
+4. **Also check using the AWS console if the changes are reflected.**
+
+![](img/LGWA/LGWA-24.png)
+
 ## 13. Revisit the Public IPv4 Address
 Visit your public IPv4 address in a browser again. Your Apache web server should now be accessible.
 
@@ -140,7 +188,8 @@ This is mine, lets watch yours!
 
 Copy paste this to vim
 
-```
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>

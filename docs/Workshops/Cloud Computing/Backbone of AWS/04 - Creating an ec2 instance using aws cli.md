@@ -34,7 +34,7 @@ In the "Users" section, click on the username you created.
 ![](img/CLI/CLI-02.png)
 
 if you don't have one, refer to this guide
-https://awsccupmindanao.github.io/knowledge_base/Workshops/Security/First%20Line%20of%20Defense/06%20-%20IAM%20Users%20and%20ARNs/#step-1-go-to-your-aws-console-and-open-iam-dashboardconsole
+[First Line of Defense - IAM Users and ARNs](https://alc-knowledge-base.vercel.app/Workshops/Security/First%20Line%20of%20Defense/06%20-%20IAM%20Users%20and%20ARNs/)
 
 #### 2.1 Create Access Keys Using the Root Account (Optional)
 If you do not have an IAM user, you can use your root account to create access keys. However, it’s important to note that using root account credentials is not a best practice due to security risks. If you choose to proceed, follow these steps:

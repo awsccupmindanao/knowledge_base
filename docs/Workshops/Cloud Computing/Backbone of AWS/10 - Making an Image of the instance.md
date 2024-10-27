@@ -26,9 +26,12 @@ An Amazon Machine Image (AMI) is an image that provides the software that is req
 
 ![](img/AMI/AMI-01.png)
 
-AMIs are the foundation for launching EC2 instances, and they provide a quick and efficient way to launch instances with pre-configured software and settings. By creating custom AMIs, you can capture the configuration of an instance and use it to launch identical instances in the future.
+AMIs are the foundation for launching EC2 instances, and they provide a quick and efficient way to launch instances with pre-configured software and settings. This is throua a process called **Image Builder**.
+By creating custom AMIs, you can capture the configuration of an instance and use it to launch identical instances in the future.
 
 You can launch multiple instances from a single AMI when you require multiple instances with the same configuration. 
+
+Image Builder is offered at no cost, other than the cost of the underlying AWS resources used to create store ang share the images.
 
 ## Creating a Pre-built AMI from an Instance
 
@@ -104,6 +107,49 @@ Let’s test if the instance has the same configuration as the first, including 
 ![](img/AMI/AMI-13.png)
 
 As you can see, the webpage is the same as the first instance. This means that the image captured from the first instance was successfully created and launched as a new instance.
+
+## Creating an Image from an Instance using AWS CLI
+
+1. **Show all the instances in the region.**
+
+```bash
+aws ec2 describe-instance-status --include-all-instances --output table
+```
+
+Copy the instance ID of the instance you want to create an image from.
+
+![](img/AMI/AMI-22.png)
+
+In this case, we will use the instance ID of the first instance we created. Which for mine is `i-0a81ca23862089678`.
+
+2. **Create an image from the instance.**
+
+```bash
+aws ec2 create-image \
+    --instance-id i-0a81ca23862089678 \
+    --name "alc-ec2-workshop-Image" \
+    --description "An AMI of my web server instance" 
+```
+
+![](img/AMI/AMI-23.png)
+
+3. **List all the images in the region created by you.**
+
+```bash
+aws ec2 describe-images --owners self
+```
+
+![](img/AMI/AMI-24.png)
+
+4. **Verify the existence of the image on the AWS Console.**
+
+![](img/AMI/AMI-25.png)
+
+5. **Create a new instance from the image.**
+
+- Use the Image ID of the image you created and follow this guide.
+
+[Launch the EC2 Instance](03%20-%20Creating%20an%20ec2%20instance%20using%20aws%20cli.md#step-1-launch-the-ec2-instance)
 
 ### Connecting to the Instance
 
