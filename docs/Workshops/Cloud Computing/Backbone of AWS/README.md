@@ -123,11 +123,11 @@ Explore the range of EC2 storage available particularly understanding what is EB
 - **Expanding an EBS Volume**: Steps to expand the EBS volume and the file system on the EC2 instance.
 - **Configuring an Elastic Load Balancer with Multiple Instances**: This is the guide in setting up an (ELB) with three EC2 instances that provide slightly different outputs.
 
-### [Creating a load balancer](15%20-%20Creating%20a%20load%20balancer.md)
+### [Creating a load balancer](15%20-%20Elastic%20Load%*20Balancer*.md)
 
 - This part will walk you through the process of setting up an Elastic Load Balancer (ELB) with three EC2 instances that provide slightly different outputs. This setup will help demonstrate how load balancing works by distributing traffic across the instances.
 
-### [Auto Scaling Group](17%20-%20Creating%20an%20auto%20scaling%20group.md)
+### [Auto Scaling Group](17%20-%20EC2%20Auto%20Scaling.md)
 
 This will help in ensuring the correct number of Amazon EC2 instances available to handle the load for an application. Key points include:
 
