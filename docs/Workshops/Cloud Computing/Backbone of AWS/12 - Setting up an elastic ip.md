@@ -15,6 +15,18 @@
 
 ![](img/EIA/EIA-02.png)
 
+### Step 1.1: Allocate an Elastic IP Address using AWS CLI
+You can also allocate an Elastic IP address using the AWS CLI. Run the following command:
+
+```bash
+aws ec2 allocate-address --domain vpc
+```
+
+![](img/EIA/EIA-19.png)
+
+This command will return the details of the newly allocated Elastic IP address.
+Copy the Allocation ID for the next step. Mine is `eipalloc-04f8825b6e3fa5796`
+
 ### Step 2: Associate the Elastic IP with an EC2 Instance
 1. Select the newly allocated Elastic IP from the list.
 
@@ -32,6 +44,37 @@
 5. Click **Associate**.
 
 ![](img/EIA/EIA-06.png)
+
+### Step 2.1: Associate the Elastic IP with an EC2 Instance using AWS CLI
+You can also associate the Elastic IP address with an EC2 instance using the AWS CLI. Run the following command:
+
+1. Lets first check the instance ID of the instance we want to associate the Elastic IP with.
+
+```bash
+aws ec2 describe-instance-status --include-all-instances --output table
+```
+
+![](img/EIA/EIA-20.png)
+
+Copy the instance ID of the instance you want to associate the Elastic IP with.  
+
+2. With the instance ID and the allocation ID, run the following command:
+
+```bash
+aws ec2 associate-address \
+    --instance-id <instance-id> \
+    --allocation-id <allocation-id>
+```
+
+![](img/EIA/EIA-21.png)
+
+3. Lets check the Elastic IP address to see if it has been associated with the instance.
+
+```bash
+aws ec2 describe-addresses 
+```
+
+![](img/EIA/EIA-22.png)
 
 ### Step 3: Verify the Association
 1. Navigate back to the **Instances** section in the EC2 dashboard.
@@ -98,6 +141,43 @@
 4. Confirm the release.
 
 ![](img/EIA/EIA-10.png)
+
+## Clean up using AWS CLI
+
+1. To disassociate the Elastic IP from the instance later, you can use the disassociate-address command:
+
+- You first need to get the AssociatedID using the following command:
+
+```bash
+aws ec2 describe-addresses
+```
+![](img/EIA/EIA-23.png)
+
+Using the copied association ID, run the following command:
+
+```bash
+aws ec2 disassociate-address --association-id <association-id>
+```
+
+![](img/EIA/EIA-24.png)
+
+
+Checking the Elastic IP address again, you will see that it is no longer associated with the instance.
+
+```bash
+aws ec2 describe-addresses 
+```
+
+![](img/EIA/EIA-25.png)
+
+
+2. If you want to release the Elastic IP when you no longer need it, use with the allocation-id earlier:
+
+```bash
+aws ec2 release-address --allocation-id <allocation-id>
+```
+
+![](img/EIA/EIA-27.png)
 
 ## Additional Resources
 - [Elastic IP Addresses](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html)

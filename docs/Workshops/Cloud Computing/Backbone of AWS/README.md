@@ -1,6 +1,7 @@
 ---
- title: Backbone of AWS
+title: Backbone of AWS
 ---
+
 <!-- <h2 align="center">Strengthen Your AWS Account: Security 101 with IAM</h2> -->
 
 <img alt="AWS Workshop Banner" width="1412" src="img/banner.png">
@@ -14,24 +15,24 @@
 </p>
 
 ## **Table of Contents**
+
 - [**Table of Contents**](#table-of-contents)
 - [**Workshop Overview**](#workshop-overview)
 - [**Prerequisites**](#prerequisites)
 - [**Workshop Elements**](#workshop-elements)
   - [History of AWS](#history-of-aws)
   - [AWS Architecture](#aws-architecture)
+  - [EC2 and its Pricing](#ec2-and-its-pricing)
   - [Creating an Instance](#creating-an-instance)
+  - [Creating an Instance using AWS CLI](#creating-an-instance-using-aws-cli)
   - [Instance Connect](#instance-connect)
   - [Security Groups](#security-groups)
   - [S3 and IAM with EC2](#s3-and-iam-with-ec2)
-    - [Creating an Admin IAM User](#creating-an-admin-iam-user)
   - [EC2 Amazon Machine Image](#ec2-amazon-machine-image)
   - [Elastic IP](#elastic-ip)
   - [Elastic Block Storage](#elastic-block-storage)
+  - [Creating a load balancer](#creating-a-load-balancer)
   - [Auto Scaling Group](#auto-scaling-group)
-    - [Policy Simulator](#policy-simulator)
-  - [Granting Billing Console Access](#granting-billing-console-access)
-  - [Budget Alarms and Budget Creation](#budget-alarms-and-budget-creation)
 
 ## **Workshop Overview**
 
@@ -49,84 +50,88 @@ Ensure you have the following tools installed before starting:
 
 ## **Workshop Elements**
 
-### [History of AWS](01%20-%20AWS%20Getting%20Started.md)
+### [History of AWS](00%20-%20History%20of%20AWS.md)
 
-This module covers the essential elements of AWS account structures and their importance for securing cloud resources. Topics include:
+This section covers the Emergence of Cloud-Based Services.
 
-- **AWS Account Hierarchy**: Understand the different types of AWS accounts and their roles.
-- **Account Settings and Configuration**: Learn how to configure your account for optimal security.
-- **Security Best Practices**: Implement foundational security measures and understand AWS's built-in security features.
+### [AWS Architecture](01%20-%20AWS%20Architecture.md)
 
-### [AWS Architecture](02%20-%20Shared%20Responsibility%20Model.md)
+Explore and know how the AWS provides a vast and scalable cloud platform that enables companies to deliver services globally. Key points include:
 
-Dive deep into the Shared Responsibility Model, which defines the division of security responsibilities between AWS and its users. Key points include:
+- **AWS Global Infrastruture**: This tackles regions and availability Zones along with its purpose, usage and exaples.
+- **Core AWS Services**: Compute services as the backbone for processing power on AWS, Storage, Networking, Databses, Content Delivery, Security, Elasticity & sclaing, and Serverless architecture and their importance to AWS Architecture.
+- **Key Benefits of AWS Global Architecture**
 
-- **Understanding AWS Responsibilities**: What AWS manages, including hardware, software, networking, and facilities.
-- **User Responsibilities**: Your role in managing data, applications, and access controls.
-- **Security and Compliance**: How to leverage AWS tools and services to meet compliance requirements.
+### [EC2 and its Pricing](02%20-%20EC2%20and%20its%20Pricing.md)
 
-### [Creating an Instance](03%20-%20Creating%20AWS%20Account.md)
+Understand the Amazon Elastic Compute Cloud (Amazon EC2) along with it features. This will cover also the different pricing for related services.
 
-Learn the step-by-step process for creating and configuring AWS accounts, focusing on security and best practices:
+### [Creating an Instance](03%20-%20Launching%20your%20own%20instance.md)
 
-- **Creating New Accounts**: Detailed instructions on setting up new AWS accounts.
-- **Account Structure Best Practices**: Guidelines for organizing accounts for different environments (development, testing, production).
-- **Account Security Configuration**: How to configure security settings and enable necessary features.
+Learn the steps in launching your first EC2 instance. The following will serve as the primer to your journey:
 
-### [Instance Connect](04%20-%20Multi-factor%20Authentication.md)
+- **Guide to Launching Your First EC2 Instance**: Detailed instructions on setting up new AWS accounts.  
+  
+### [Creating an Instance using AWS CLI](04%20-%20Creating%20an%20ec2%20instance%20using%20aws%20cli.md)
 
-Master the implementation of MFA to enhance account security. This module includes:
+- Making an EC2 Instance using AWS CLI, the way to interact with AWS services programmatically, this guide also gives you the guide to Create Access Keys in the Management Console .
 
-- **MFA Overview**: The importance of MFA in protecting AWS accounts.
-- **Enabling MFA**: Step-by-step instructions for setting up MFA for root and IAM users.
-- **MFA Types**: Different MFA methods (hardware tokens, mobile apps) and their applications.
-- **Troubleshooting MFA Issues**: Common problems and how to resolve them.
+### [Instance Connect](05%20-%20All%20About%20Connecting%20to%20an%20Instance.md)
 
+This will give you an understanding regarding the access to a server in the cloud, allowing administrators and developers to manage, configure, and maintain the infrastructure remotely. This module includes:
 
-### [Security Groups](05%20-%20AWS%20Identity%20and%20Access%20Management.md)
+- **What is key pair?**: Vital to secure access to your Amazon EC2 instance.
+- **How the Key Pairs Work in SSH**: Demonstration of user and host key pairs.
+- **SSH Handshake and its benefits**
+- **Connecting to your instance**: steps to connect after launching EC2 instance.
 
-Explore the core components of IAM and how to use them effectively:
+### [Security Groups](07%20-%20Security%20Group.md)
 
-### [S3 and IAM with EC2](06%20-%20IAM%20Users%20and%20ARNs.md)
-- **IAM Users**: How to create and manage IAM users.
-- **Amazon Resource Names (ARNs)**: Understanding and using ARNs to specify resources.
+Know the role of security groups in EC2 instances and the best practices for using one along with Understanding IP addresses.
 
-#### Creating an Admin IAM User
-- **Admin User Creation**: Detailed process for setting up an admin IAM user with appropriate permissions.
-- **Securing Admin Users**: Best practices for securing admin accounts.
+- **Apache Web Server Setup on EC2 instace**
 
-### [EC2 Amazon Machine Image](07%20-%20IAM%20Access%20Keys.md)
-- **Generating Access Keys**: How to create and manage access keys for programmatic access.
-- **Using AWS CLI v2**: Configuring and using AWS CLI v2 with access keys.
+### [S3 and IAM with EC2](09%20-%20Adding%20files%20to%20an%20instance.md)
 
-### [Elastic IP](08%20-%20IAM%20Groups.md)
-- **IAM Groups**: How to create and manage IAM groups for organizing users.
-- **Permissions Management**: Assigning permissions to groups and understanding permission policies.
+Understanding what is Amazon S3 and IAM role and its relation EC2 isntance.
 
-### [Elastic Block Storage](10%20-%20IAM%20Roles.md)
-- **Defining IAM Roles**: How to create and configure IAM roles for various use cases.
+- **Guide to Adding files to EC2 instance**
 
-### [Auto Scaling Group](12%20-%20Simple%20Identity%20Policies%20in%20AWS.md)
-- **Attaching Policies**: Best practices for attaching and managing policies.
+### [EC2 Amazon Machine Image](10%20-%20Making%20an%20Image%20of%20the%20instance.md)
 
+Discover Amazon Machine Image as a requirement to set up and boot an Amazon EC2 instance.
 
-#### Policy Simulator
-- **Using the Policy Simulator**: How to test and validate IAM policies to ensure they meet your security requirements.
-- **Interpreting Results**: Understanding simulation results to refine policies.
+- **Creating a Pre-built AMI from an Instance**: Steps to create a pre-built AMI with the image captured from our instance.
 
-### [Granting Billing Console Access](14%20-%20Allowing%20Access%20to%20Billing%20Console.md)
+### [Elastic IP](11%20-%20Elastic%20IP.md)
 
-Learn to manage access to the billing console:
+Introduction to Elastic IP with its Key Features and Benefits, security access, cost and tagging, and regional availability.
 
-- **Granting Access**: Detailed steps for providing IAM users with access to the billing console.
-- **Configuring Billing Permissions**: Setting up appropriate permissions to control billing information access.
-- **Monitoring Billing Activity**: How to monitor and review billing activity to ensure proper access controls.
+- **Setting Up an Elastic IP**
 
-### [Budget Alarms and Budget Creation](15%20-%20Creating%20a%20Budget%20and%20Setting%20up%20Budget%20Alarms.md)
+### [Elastic Block Storage](13%20-%20Storage%20in%20EC2.md)
 
-Gain expertise in managing and controlling your cloud spend with these topics:
+Explore the range of EC2 storage available particularly understanding what is EBS and EFS. The following includes in this section:
 
-- **Creating Budget Alarms**: How to set up alarms for monitoring spending thresholds.
-- **Setting Up Budgets**: Detailed steps to create and manage budgets within AWS.
-- **Cost Optimization Tips**: Best practices for managing and reducing AWS costs.
-- **Reviewing Budget Reports**: How to interpret budget reports and adjust configurations accordingly.
+- **Storage in EC2**: Storage options can be used independently or in combination.
+- **EBS volumes**: It's the storage volumes that you attach to Amazon EC2 instances.
+- **EBS snapshots**: The backups of Amazon EBS volumes.
+- **EBS volume types**:
+- **Features and benefits of Amazon EBS volumes**
+- **Elastic File System (EFS)**: 'for limux instance'
+- **EBS Lifecycle Manager**: This is for the automation of the creation, retention, and deletion of EBS snapshots and EBS-backed AMIs.
+- **Expanding an EBS Volume**: Steps to expand the EBS volume and the file system on the EC2 instance.
+- **Configuring an Elastic Load Balancer with Multiple Instances**: This is the guide in setting up an (ELB) with three EC2 instances that provide slightly different outputs.
+
+### [Creating a load balancer](15%20-%20Creating%20a%20load%20balancer.md)
+
+- This part will walk you through the process of setting up an Elastic Load Balancer (ELB) with three EC2 instances that provide slightly different outputs. This setup will help demonstrate how load balancing works by distributing traffic across the instances.
+
+### [Auto Scaling Group](17%20-%20Creating%20an%20auto%20scaling%20group.md)
+
+This will help in ensuring the correct number of Amazon EC2 instances available to handle the load for an application. Key points include:
+
+- **Creating a launch template**: Best practices for attaching and managing policies.
+- **Create ASG using launch configurations**: Best practices for attaching and managing policies.
+- **Scaling Methods**: Several ways to scale Auto Scaling group.
+- **Challenges of using EC2 Auto Scaling**'

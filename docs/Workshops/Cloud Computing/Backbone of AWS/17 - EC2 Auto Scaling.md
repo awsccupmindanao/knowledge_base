@@ -111,6 +111,7 @@ EC2 Auto Scaling can help improve fault tolerance, availability and cost managem
 - Spot can sometimes be cheaper. However, the unpredictable nature of Spot Instance terminations and 2-minute warning provided by AWS means that it can be complex, time-consuming, and even risky to run Spot.
 
 **Choosing the right combination of Spot instances**
-- Spot instances vary in type, price and availability zone, and the market constantly fluctuates in terms of (1) what is available and (2) how much it costs.
+- Spot instances vary in type, price and availability zone, and the market constantly fluctuates in terms of (1) what is available and (2) how much it costs.  
+  
 **Compatibility of instance families with workloads**
 - Selecting the right instance types for your Auto Scaling group depends on factors such as CPU, memory, network performance, and storage requirements. 

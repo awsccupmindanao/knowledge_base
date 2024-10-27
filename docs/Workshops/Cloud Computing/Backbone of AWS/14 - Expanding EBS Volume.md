@@ -29,6 +29,32 @@
 
 ---
 
+## Step 1.1: Modify the EBS Volume Using AWS CLI
+
+1. **Check the Volume ID**:
+   - Run the following command to list all the volumes in the region:
+
+```bash
+aws ec2 describe-volumes
+```
+
+![lsblk](img/EBSD/EBSD-15.png)
+
+   - Copy the `VolumeId` of the volume you want to modify.
+
+2. **Modify the Volume**:
+   - Run the following command to modify the volume size. For example we want to modify the volume with `VolumeId` `vol-0a8a678e064948d77` to `16 GiB`:
+
+```bash
+aws ec2 modify-volume \
+    --volume-id <VolumeId> \
+    --size 16
+```
+
+![lsblk](img/EBSD/EBSD-16.png)
+
+
+
 ## Step 2: Reflect the Changes on the EC2 Instance Using AWS CLI
 
 1. **Verify the New Size on the Instance**:
