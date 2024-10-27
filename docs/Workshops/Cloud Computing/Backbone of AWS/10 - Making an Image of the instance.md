@@ -143,13 +143,37 @@ aws ec2 describe-images --owners self
 
 4. **Verify the existence of the image on the AWS Console.**
 
-![](img/AMI/AMI-25.png)
+![](img/AMI/AMi-25.png)
 
-5. **Create a new instance from the image.**
+5. **Create a new instance from the image.**  
 
-- Use the Image ID of the image you created and follow this guide.
+We will use this command:
 
-[Launch the EC2 Instance](03%20-%20Creating%20an%20ec2%20instance%20using%20aws%20cli.md#step-1-launch-the-ec2-instance)
+```bash
+aws ec2 run-instances \
+    --image-id <ami-id> \
+    --instance-type t2.micro \
+    --key-name <your-key-pair> \
+    --security-group-ids <your-security-group-id> \
+    --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=<Instance Name>}]'
+```
+- We already have the AMI ID from the previous command. (`aws ec2 describe-images --owners self`)
+- We also have a keypair named 'keypair'.
+- Lets name the instace as `alc-ec2-workshop-AMI2`. As our 2nd AMI instance.
+
+- Now we only need to find the security group ID. Use the following command:
+
+```bash
+aws ec2 describe-security-groups
+```
+
+![](img/AMI/AMI-26.png)
+
+- Copy the security group ID of the security group that we had on the first instance. In this case, the security group ID is `sg-0c1b0b8939dd8ba1a`.
+
+- Now we can create a new instance from the image.
+
+![](img/AMI/AMI-27.png)
 
 ### Connecting to the Instance
 
@@ -177,7 +201,7 @@ Based on the ssh command we copied:
 **Lets do some minor edits on our Apache webpage.**  
 
 NOTE: This will be useful in the following sections.
-\
+
 - Go to the instance and edit the `index.html` file.
 
 ```
@@ -208,6 +232,10 @@ save and exit file
 - Verify the changes by refreshing the webpage.
 
 ![](img/AMI/AMI-21.png)
+
+- Repeat the process to our 2nd AMI instance made using AWS CLI, add content such as `3rd Instance`.
+
+![](img/AMI/AMI-28.png)
 
 #### Cleanup:
 - Remember to remove remove the image and the instances to avoid unnecessary charges.

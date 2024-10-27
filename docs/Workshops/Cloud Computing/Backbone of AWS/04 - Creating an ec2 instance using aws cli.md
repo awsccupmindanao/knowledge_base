@@ -123,6 +123,15 @@ Once AWS CLI is configured, you're ready to create an EC2 instance. Here's how:
 
 ### Step 1: Launch the EC2 Instance  
 
+```bash
+aws ec2 run-instances \
+    --image-id <ami-id> \
+    --instance-type t2.micro \
+    --key-name <your-key-pair> \
+    --security-group-ids <your-security-group-id> \
+    --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=<Instance Name>}]'
+```
+
 Use the following command to launch a t2.micro instance with the name 'awscli-instance', using the default security group and a key pair pemfile named 'keypair' that we made earlier (just replace the keypair name with your own). You can also omit the --key-name command if you dont want to put one: 
 
 image-id as: ami-0aa097a5c0d31430a

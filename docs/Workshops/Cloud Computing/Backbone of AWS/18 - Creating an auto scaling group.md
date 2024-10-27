@@ -56,24 +56,34 @@ A **Launch Template** or **Launch Configuration** defines the configuration for 
 
 You can also create a Launch Template using the AWS CLI:
 
-```
+```bash
 aws ec2 create-launch-template \
-    --launch-template-name my-template \
-    --version-description "Version 1" \
+    --launch-template-name alc-workshop-ec2-launchtemplate \
+    --version-description "Initial version" \
     --launch-template-data '{
-      "ImageId": "ami-0abcdef1234567890",
-      "InstanceType": "t2.micro",
-      "KeyName": "my-key-pair",
-      "SecurityGroupIds": ["sg-0123456789abcdef0"],
-      "BlockDeviceMappings": [{
-        "DeviceName": "/dev/xvda",
-        "Ebs": {
-          "VolumeSize": 8,
-          "VolumeType": "gp2"
-        }
-      }]
-    }
+        "ImageId": "<ami-id>",
+        "InstanceType": "<instance-type>",
+        "KeyName": "<key-pair-name>",
+        "SecurityGroupIds": ["<security-group-id>"]
+    }'
 ```
+
+1. **Replace** `<ami-id>`, `<instance-type>`, `<security-group-id>`, and `<key-pair-name>` with your values. For mine it would be:
+
+```bash
+aws ec2 create-launch-template \
+    --launch-template-name alc-workshop-ec2-launchtemplate \
+    --version-description "Initial version" \
+    --launch-template-data '{
+        "imageId": "ami-05d750b3a87a5af4c",
+        "instanceType": "t2.micro",
+        "keyName": "keypair",
+        "securityGroupIds": ["sg-0c1b0b8939dd8ba1a"]
+    }'
+
+```
+
+![](img/ASG/ASG-15.png)
 
 ## Step 2: Create an Auto Scaling Group
 
@@ -95,7 +105,7 @@ Click Create Auto Scaling group.
 ![](img/ASG/ASG-09.png)
 
 3. Choose a VPC and Subnets:
-   - Select a VPC and subnets where your instances will be launched. Se
+   - Select a VPC and subnets where your instances will be launched. Select all subnets for high availability.
 
 ![](img/ASG/ASG-10.png)
 
@@ -127,17 +137,86 @@ just click next until you reach the end.
 
 ### Using AWS CLI:
 
-You can also create an Auto Scaling Group using the AWS CLI:
+1. You can also create an Auto Scaling Group using the AWS CLI:
 
-```
+```bash
 aws autoscaling create-auto-scaling-group \
-    --auto-scaling-group-name my-auto-scaling-group \
-    --launch-template "LaunchTemplateName=my-template,Version=1" \
-    --min-size 1 \
-    --max-size 4 \
-    --desired-capacity 2 \
-    --vpc-zone-identifier "subnet-0123456789abcdef0,subnet-0abcdef1234567890"
+    --auto-scaling-group-name <asg-name> \
+    --launch-template LaunchTemplateName=<launch-template-name> \
+    --min-size 2 \
+    --max-size 5 \
+    --desired-capacity 3 \
+    --vpc-zone-identifier "<subnet-id,subnet-id2...>" \
+    --tags Key=Name,Value=<asg-name>,PropagateAtLaunch=true
 ```
+
+- Replace `<asg-name>` with the name of your Auto Scaling Group.
+- Replace `<launch-template-name>` with the name of the Launch Template you created. Mine is `alc-workshop-ec2-launchtemplate`.
+- Replace `<subnet-id>` with the subnet ID where your instances will be launched. Include all subnets as it will be used for high availability. Use this command to get all the subnet IDs in your VPC:
+
+```bash
+aws ec2 describe-subnets --query 'Subnets[*].[SubnetId, AvailabilityZone]' --output table
+```
+
+![](img/ASG/ASG-16.png)
+
+The subnet's are as follows: `subnet-0b8a1b62a519af134` , `subnet-0dde1c2d70e916cb2` and `subnet-08ce131ed07f297ce`.
+
+- My command would be:
+
+```bash
+aws autoscaling create-auto-scaling-group \
+    --auto-scaling-group-name alc-workshop-asg \
+    --launch-template LaunchTemplateName=alc-workshop-ec2-launchtemplate \
+    --min-size 2 \
+    --max-size 5 \
+    --desired-capacity 3 \
+    --vpc-zone-identifier "subnet-0b8a1b62a519af134,subnet-0dde1c2d70e916cb2,subnet-08ce131ed07f297ce"  \
+    --tags Key=Name,Value=alc-workshop-ec2-asg,PropagateAtLaunch=true
+```
+
+then use to verify the auto scaling group:
+```bash
+aws autoscaling describe-auto-scaling-groups --output table
+```
+
+![](img/ASG/ASG-17.png)
+
+2. Attach the Auto Scaling Group to the Load Balancer:
+   - You can attach the Auto Scaling Group to the Load Balancer using the AWS Management Console or the AWS CLI. Run the following command:
+  
+```bash
+aws autoscaling attach-load-balancer-target-groups \
+    --auto-scaling-group-name alc-workshop-asg \
+    --target-group-arns <your-target-group-arn>
+```
+
+- My target group ARN is `arn:aws:elasticloadbalancing:ap-southeast-1:654654267789:targetgroup/alc-workshop-ec2-TG/64d292c1d82539e6`.
+
+![](img/ELB/ELB-24.png)
+
+- My command would be:
+
+```bash
+aws autoscaling attach-load-balancer-target-groups \
+    --auto-scaling-group-name alc-workshop-asg \
+    --target-group-arns arn:aws:elasticloadbalancing:ap-southeast-1:654654267789:targetgroup/alc-workshop-ec2-TG/64d292c1d82539e6
+```
+
+![](img/ASG/ASG-19.png)
+
+- Also verify the target group is attached to the Auto Scaling Group using the command:
+
+```bash
+aws autoscaling describe-auto-scaling-groups --auto-scaling-group-names <auto-scaling-group-name> --query "AutoScalingGroups[*].[AutoScalingGroupName,TargetGroupARNs]" --output table
+```
+- My command is:
+
+```bash
+aws autoscaling describe-auto-scaling-groups --auto-scaling-group-names alc-workshop-asg --query "AutoScalingGroups[*].[AutoScalingGroupName,TargetGroupARNs]" --output table
+```
+
+![](img/ASG/ASG-18.png)
 
 **Note**
 - To verify auto scaling behaviour, refer to this documentation

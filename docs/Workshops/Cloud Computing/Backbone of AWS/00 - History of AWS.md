@@ -23,25 +23,25 @@ AWS started primarily as a service to rent out excess server capacity through EC
 ![](img/HOA/HOA-03.png)
 
 **2000-2003: The Idea**  
-  In the early 2000s, Amazon faced internal challenges managing their own infrastructure. This led to the concept of offering excess computing capacity to other companies.
+- In the early 2000s, Amazon faced internal challenges managing their own infrastructure. This led to the concept of offering excess computing capacity to other companies.
 
 **2002: Early Web Services**  
-  Amazon launched its first web services, such as the Amazon e-commerce service, but the full cloud concept wasn’t implemented yet.
+- Amazon launched its first web services, such as the Amazon e-commerce service, but the full cloud concept wasn’t implemented yet.
 
 **2004: AWS Development**  
-  A small team led by Andy Jassy began working on the foundations of AWS. They aimed to create a platform that could help developers build applications more efficiently.
+- A small team led by Andy Jassy began working on the foundations of AWS. They aimed to create a platform that could help developers build applications more efficiently.
 
 **2006: Official Launch of AWS**  
-  AWS officially launched in 2006 with its first services, Simple Storage Service (S3) and Elastic Compute Cloud (EC2). These services allowed businesses to rent storage and computing power on demand.
+- AWS officially launched in 2006 with its first services, Simple Storage Service (S3) and Elastic Compute Cloud (EC2). These services allowed businesses to rent storage and computing power on demand.
 
 **2007-2011: Growth and New Services**  
-  AWS rapidly grew and expanded its services, including the introduction of Relational Database Service (RDS) in 2009, CloudFront for content delivery in 2008, and Elastic Block Store (EBS) in 2008.
+- AWS rapidly grew and expanded its services, including the introduction of Relational Database Service (RDS) in 2009, CloudFront for content delivery in 2008, and Elastic Block Store (EBS) in 2008.
 
 **2012-2015: Global Expansion**  
-  AWS expanded its global infrastructure with new data centers worldwide, establishing a robust presence in regions like Europe, Asia, and South America. During this period, it launched over 100 new services, including DynamoDB (2012) and Redshift (2013).
+- AWS expanded its global infrastructure with new data centers worldwide, establishing a robust presence in regions like Europe, Asia, and South America. During this period, it launched over 100 new services, including DynamoDB (2012) and Redshift (2013).
 
-**2016: $10 Billion Milestone**   
-  AWS hit $10 billion in annual revenue in 2016. This highlights its dominance in the cloud industry. New services like Lambda (serverless computing) also emerged during this time.
+**2016: $10 Billion Milestone**  
+- AWS hit $10 billion in annual revenue in 2016. This highlights its dominance in the cloud industry. New services like Lambda (serverless computing) also emerged during this time.
 
 **2020-Present: Continuing Innovation**  
-  AWS continues to dominate the cloud industry with innovations in AI, machine learning, and edge computing. It now offers more than 200 services across various sectors.
+- AWS continues to dominate the cloud industry with innovations in AI, machine learning, and edge computing. It now offers more than 200 services across various sectors.

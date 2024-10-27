@@ -55,31 +55,28 @@ aws ec2 modify-volume \
 
 
 
-## Step 2: Reflect the Changes on the EC2 Instance Using AWS CLI
+## Step 2: Reflect the Changes on the EC2 Instance Using SSH Connection.
 
 1. **Verify the New Size on the Instance**:
    - SSH into your EC2 instance.
 
 ![lsblk](img/EBSD/EBSD-07.png)
 
-   - Check if the OS recognizes the new volume size:
-  
-     ```bash
-     lsblk
-     ```
+   - Check if the OS recognizes the new volume size, and lets use it to see the file system type:
 
-![lsblk](img/EBSD/EBSD-08.png)
+```bash
+lsblk
+```
+![lsblk](img/EBSD/EBSD-17.png)
 
-   - Lets use to see the file system type:
-  
-      ```bash
-      lsblk -f 
-      ``` 
+```bash
+lsblk -f 
+``` 
 ![lsblk](img/EBSD/EBSD-09.png)
 
 From the output, we can see that the file system type is `xfs`.
 
-2. **Resize the partition**
+1. **Resize the partition**
    
 ```
 sudo growpart /dev/xvda 1
