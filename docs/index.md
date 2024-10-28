@@ -3,17 +3,31 @@ hide:
   - navigation
   - toc
 ---
-<div align='center'>
-<img src='assets/logo/alc_logo.png' width='350'>
-<br><br>
-<h1><b>AWS Learning Club - UP Mindanao</b></h1>
+
+<link href="index.css" rel="stylesheet"></link>
+
+<div class='main-container'>
+<h1 class='title'><b>Welcome to AWS Knowledge Base!</b></h1>
+  <div class='parent-container' id='heading'>
+    <div class='card' id='big-card'>
+        <img src='assets/logo/alc_logo.png' id='logo'>
+        <h2><b>AWS Learning Club - UP Mindanao</b></h2>
+        <p>Amazon Web Services Learning Club - University of the Philippines Mindanao is the <b>first official AWS student organization in Mindanao</b>. Founded in early 2024, this club fosters AWS knowledge growth through <b>workshops, knowledge sharing, and community building</b>.</p>
+    </div>
+    <div class='child-container'>
+      <div class='scroll-wrapper' id='body'>
+        <!-- Start Replacing Data Here-->
+        <a href='/knowledge_base/Workshops/Cloud%20Computing/Backbone%20of%20AWS/'>
+          <div class='card computing' id='medium-card'></div>
+        </a>
+        <a href='/knowledge_base/Workshops/Security/First%20Line%20of%20Defense/'>
+          <div class='card security' id='medium-card'></div>
+        </a>
+        <a href=''>
+          <div class='card coming-soon' id='medium-card'>
+              <h2>More Coming Soon</h2>
+          </div>
+        </a>
+      </div>
+  </div>
 </div>
-Amazon Web Services Learning Club - University of the Philippines Mindanao is the **first official AWS student organization in Mindanao**. Founded in early 2024, this club fosters AWS knowledge growth through **workshops, knowledge sharing, and community building**.
-
-## **Mission**
-
-Foster a **collaborative learning environment** to empower individuals of all backgrounds to gain proficiency in Amazon Web Services (AWS) through workshops, knowledge sharing, and community building.
-
-## **Vision**
-
-To become a **premier learning hub** that cultivates a skilled and passionate cloud computing community leveraging AWS to **drive innovation and create positive impact**.
