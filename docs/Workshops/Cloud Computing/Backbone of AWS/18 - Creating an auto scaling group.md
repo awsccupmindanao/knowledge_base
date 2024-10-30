@@ -81,6 +81,8 @@ aws ec2 create-launch-template \
         "securityGroupIds": ["sg-0c1b0b8939dd8ba1a"]
     }'
 
+Source: 
+
 ```
 
 ![](img/ASG/ASG-15.png)
