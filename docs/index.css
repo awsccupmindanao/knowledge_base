@@ -122,6 +122,10 @@
   margin-bottom: 30px;
 }
 
+#big-card p {
+  margin-top: 20px;
+}
+
 #medium-card:hover {
   opacity: 90%;
 }
@@ -146,13 +150,74 @@
 }
 /* Media Queries */
 
-/* Mobile Devices */
-@media (max-width: 700px) {
+/* 400px */
+@media (max-width: 400px) {
+  .main-container {
+    margin: -50px 0px 0px 0px;
+  }
+
+  #big-card {
+    min-height: 460px;
+    width: 60vw;
+  }
+
+  #medium-card {
+    height: 34vw;
+    width: 60vw;
+  }
+
+  #big-card p {
+    font-size: 10.5px;
+  }
+
+  .main-container h1 {
+    font-size: 20px;
+  }
+}
+/* 350px */
+@media (max-width: 350px) {
+  #big-card {
+    min-height: 450px;
+  }
+}
+
+/* 350px - 420px */
+@media (min-width: 350px) and (max-width: 420px) {
+  #big-card {
+    min-height: 425px;
+  }
+}
+
+/* 420px - 500px */
+@media (min-width: 420px) and (max-width: 500px) {
+  #big-card {
+    min-height: 410px;
+  }
+}
+
+/* 500px - 575px */
+@media (min-width: 500px) and (max-width: 575px) {
+  #logo {
+    width: 100px;
+  }
+
+  #big-card {
+    min-height: 400px;
+    width: 60vw;
+  }
+
+  #big-card h2,
+  #medium-card h2 {
+    font-size: 18px;
+  }
+}
+
+/* Small Screen */
+@media (max-width: 815px) {
   #heading {
     grid-template-columns: 1fr;
     justify-items: center;
   }
-
   #body {
     grid-template-columns: 1fr 1fr;
   }
@@ -162,16 +227,11 @@
   }
 
   #big-card {
-    max-height: 400px;
+    max-height: 350px;
     width: 60vw;
   }
 
   #medium-card {
-    height: 34vw;
-    width: 60vw;
-  }
-
-  #small-card {
     height: 34vw;
     width: 60vw;
   }
@@ -187,10 +247,15 @@
   .main-container h2 {
     text-align: center;
   }
+
+  #big-card h2,
+  #medium-card h2 {
+    font-size: 20px;
+  }
 }
 
 /* Medium Screen */
-@media (min-width: 700px) and (max-width: 1050px) {
+@media (min-width: 815px) and (max-width: 1150px) {
   #heading {
     grid-template-columns: 1fr;
     justify-items: center;
@@ -206,17 +271,12 @@
   }
 
   #big-card {
-    max-height: 325px;
+    max-height: 340px;
     width: 70vw;
   }
 
   #medium-card {
     height: 19vw;
-    width: 35vw;
-  }
-
-  #small-card {
-    height: 20vw;
     width: 35vw;
   }
 
@@ -234,22 +294,19 @@
 }
 
 /* Tablet Devices */
-@media (min-width: 1050px) and (max-width: 1300px) {
+@media (min-width: 1150px) and (max-width: 1300px) {
   #body {
     grid-template-columns: 1fr 1fr 1fr;
   }
-
-  #small-card {
-    height: 15vw;
-    width: 25vw;
-  }
-
   #big-card {
-    max-height: 30vw;
+    max-height: calc(30vw + 10px);
+  }
+  #medium-card {
+    height: calc(15vw - 20px);
   }
 
   .child-container {
-    max-height: 30vw;
+    max-height: calc(30vw + 10px);
     flex-direction: row;
     justify-content: center;
     gap: 20px;
