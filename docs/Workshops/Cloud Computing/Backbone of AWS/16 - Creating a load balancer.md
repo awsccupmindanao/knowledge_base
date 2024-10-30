@@ -54,8 +54,8 @@ You have now created a target group with three instances. The next step is to cr
 
 ![](img/ELB/ELB-05.png)
 
-     - To check the availability zone of your instances:
-     - Go back to the instace page and check the availability zone of the instances
+   - To check the availability zone of your instances:
+   - Go back to the instace page and check the availability zone of the instances
 
 ![](img/ELB/ELB-06.png)
 
@@ -96,15 +96,16 @@ You have now created a target group with three instances. The next step is to cr
 2. **Access the Load Balancer**:
    - Open a web browser and enter the DNS name of the load balancer.
    - Refresh the page multiple times to see the different instance outputs:
-     - Instance 1
+     
+   - Instance 1
 
 ![](img/ELB/ELB-18.png)
 
-     - Instance 2
+   - Instance 2
 
 ![](img/ELB/ELB-19.png)
 
-     - Instance 3
+   - Instance 3
 
 ![](img/ELB/ELB-20.png)
 
@@ -326,7 +327,7 @@ aws elbv2 describe-target-health \
 Note:
 - If you want to attach a domain name to the load balancer, you can use Route 53 to create an alias record that points to the load balancer's DNS name.
 
-Link: https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html
+Link: [https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html)
 
 #### Cleanup
 - Remove the load balancer and target group to avoid incurring additional costs if you no longer need them.
