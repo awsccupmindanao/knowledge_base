@@ -17,10 +17,10 @@ hide:
     <div class='child-container'>
       <div class='scroll-wrapper' id='body'>
         <!-- Start Replacing Data Here-->
-        <a href='/knowledge_base/Workshops/Cloud%20Computing/Backbone%20of%20AWS/'>
+        <a href='/Workshops/Cloud%20Computing/Backbone%20of%20AWS/'>
           <div class='card computing' id='medium-card'></div>
         </a>
-        <a href='/knowledge_base/Workshops/Security/First%20Line%20of%20Defense/'>
+        <a href='/Workshops/Security/First%20Line%20of%20Defense/'>
           <div class='card security' id='medium-card'></div>
         </a>
         <a href=''>
