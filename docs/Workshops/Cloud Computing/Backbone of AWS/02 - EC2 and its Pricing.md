@@ -8,7 +8,14 @@ Amazon Elastic Compute Cloud (Amazon EC2) provides on-demand, scalable computing
 
 - **Instances** - Virtual Servers
 - **Amazon Machine Images (AMIs)** - Preconfigured templates for your instances that package the components you need for your server (including the operating system and additional software).
-- **Instance Types** - Various configurations of CPU, memory, storage, networking capacity, and graphics hardware for your instances.
+- **Instance Types** - Various configurations of CPU, memory, storage, networking capacity, and graphics hardware for your instances. Here are some examples:
+
+  - **t2.micro**: General purpose instance with 1 vCPU and 1 GiB of memory. Suitable for low-traffic web servers, small databases, and development environments.
+  - **m5.large**: General purpose instance with 2 vCPUs and 8 GiB of memory. Suitable for small to medium-sized databases, data processing tasks, and backend servers.
+  - **c5.xlarge**: Compute optimized instance with 4 vCPUs and 8 GiB of memory. Suitable for compute-intensive applications like high-performance web servers, scientific modeling, and batch processing.
+  - **r5.2xlarge**: Memory optimized instance with 8 vCPUs and 64 GiB of memory. Suitable for high-performance databases, in-memory caches, and real-time big data analytics.
+  - **p3.2xlarge**: GPU optimized instance with 8 vCPUs, 61 GiB of memory, and 1 NVIDIA V100 GPU. Suitable for machine learning, deep learning, and high-performance computing applications.
+  - **i3.large**: Storage optimized instance with 2 vCPUs, 15.25 GiB of memory, and 1 x 475 GB NVMe SSD. Suitable for NoSQL databases, data warehousing, and high-transactional databases.
 - **Amazon EBS volumes** - Persistent storage volumes for your data using Amazon Elastic Block Store (Amazon EBS).
 - **Instance store volumes** - Storage volumes for temporary data that is deleted when you stop, hibernate, or terminate your instance.
 - **Key pairs** - secure login information for your instances. AWS stores the public key and you store the private key in a secure place.

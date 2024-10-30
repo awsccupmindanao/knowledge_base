@@ -12,7 +12,7 @@ hide:
     <div class='card' id='big-card'>
         <img src='assets/logo/alc_logo.png' id='logo'>
         <h2><b>AWS Learning Club - UP Mindanao</b></h2>
-        <p>Amazon Web Services Learning Club - University of the Philippines Mindanao is the <b>first official AWS student organization in Mindanao</b>. Founded in early 2024, this club fosters AWS knowledge growth through <b>workshops, knowledge sharing, and community building</b>.</p>
+        <p>Amazon Web Services Learning Club - University of the Philippines Mindanao is the <b>first official AWS student organization in Davao City and the entire UP System </b>. Founded in early 2024, this club fosters AWS knowledge growth through <b>workshops, knowledge sharing, and community building</b>.</p>
     </div>
     <div class='child-container'>
       <div class='scroll-wrapper' id='body'>
