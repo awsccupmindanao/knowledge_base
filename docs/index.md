@@ -22,7 +22,7 @@ hide:
         <a href='./Workshops/Security/First%20Line%20Of%20Defense/'>
           <div class='card security' id='medium-card'></div>
         </a>
-        <a href=''>
+        <a>
           <div class='card coming-soon' id='medium-card'>
               <h2>More Coming Soon</h2>
           </div>

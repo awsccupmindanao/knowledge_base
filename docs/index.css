@@ -74,7 +74,7 @@
 }
 
 .card:hover {
-  background-color: rgba(200, 150, 255, 0.45);
+  background-color: rgba(176, 99, 175, 1);
   transform: translateY(-5px);
   transition: background-color 0.5s, transform 0.5s;
 }
@@ -166,7 +166,7 @@
 }
 
 .coming-soon {
-  background: rgb(17, 15, 17, 0.5);
+  background: rgb(78, 42, 184);
 }
 
 /* Media Queries */
