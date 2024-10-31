@@ -85,7 +85,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   justify-items: center;
 }
@@ -169,13 +169,10 @@
   #big-card {
     min-height: 450px;
   }
-  .title {
-    height: 90px;
-  }
 }
 
-/* 400px */
-@media (max-width: 400px) {
+/* 420px */
+@media (max-width: 420px) {
   .main-container {
     margin: -50px 0px 0px 0px;
   }
@@ -197,13 +194,7 @@
   .title h1 {
     font-size: 20px;
   }
-}
 
-/* 350px - 420px */
-@media (min-width: 350px) and (max-width: 420px) {
-  #big-card {
-    min-height: 425px;
-  }
   .title {
     height: 90px;
   }
