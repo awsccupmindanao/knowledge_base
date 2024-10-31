@@ -15,8 +15,6 @@
 
 .main-container p {
   font-size: 12px;
-.main-container p {
-  font-size: 12px;
 }
 
 .parent-container {
@@ -25,7 +23,6 @@
   gap: 10px;
 }
 
-/* Headings and Body Layout */
 /* Headings and Body Layout */
 #heading {
   grid-template-columns: 2fr 1fr;
@@ -37,7 +34,6 @@
 }
 
 /* Child Container */
-/* Child Container */
 .child-container {
   display: flex;
   align-content: center;
@@ -45,7 +41,6 @@
   max-height: 30vw;
 }
 
-/* Scroll Wrapper */
 /* Scroll Wrapper */
 .scroll-wrapper {
   display: flex;
@@ -60,7 +55,6 @@
   padding: 0px 10px 0px 10px;
 }
 
-/* Card Styles */
 /* Card Styles */
 .card {
   position: relative;
@@ -91,7 +85,6 @@
 }
 
 /* Big Card */
-/* Big Card */
 #big-card {
   width: 100%;
   max-height: 30vw;
@@ -120,31 +113,11 @@
 }
 
 /* Medium Card */
-#big-card p {
-  margin-top: 20px;
-}
-
-#big-card > h2 {
-  margin-bottom: -10px;
-  font-weight: bolder;
-}
-
-/* Medium Card */
 #medium-card {
   height: calc(15vw - 10px);
   width: 30vw;
   padding: 20px;
 }
-
-#medium-card > h2 {
-  margin-bottom: 30px;
-}
-
-#medium-card:hover {
-  opacity: 90%;
-}
-
-/* Small Card */
 
 #medium-card > h2 {
   margin-bottom: 30px;
@@ -162,26 +135,6 @@
   font-size: 12px;
 }
 
-/* Title Styles */
-.title {
-  position: relative;
-  display: flex;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  line-height: 2;
-  height: 60px;
-}
-
-.title h1 {
-  font-size: 30px;
-  font-weight: bolder;
-}
-
-#logo {
-  width: 15vw;
-}
-
-/* Special Classes */
 /* Title Styles */
 .title {
   position: relative;
@@ -342,7 +295,6 @@
   }
 
   .title,
-  .title,
   .main-container h2 {
     justify-content: center;
     justify-content: center;
@@ -355,7 +307,6 @@
 }
 
 /* Medium Screen */
-@media (min-width: 815px) and (max-width: 1150px) {
 @media (min-width: 815px) and (max-width: 1150px) {
   #heading {
     grid-template-columns: 1fr;
@@ -409,7 +360,6 @@
 
 /* Tablet Devices */
 @media (min-width: 1150px) and (max-width: 1300px) {
-@media (min-width: 1150px) and (max-width: 1300px) {
   #body {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -419,7 +369,7 @@
   }
 
   #medium-card {
-    height: calc(15vw - 20px);
+    height: calc(15vw - 5px);
   }
 
   .child-container {
