@@ -19,7 +19,7 @@ hide:
         <a href='./Workshops/Cloud%20Computing/Backbone%20of%20AWS/'>
           <div class='card computing' id='medium-card'></div>
         </a>
-        <a href='./Workshops/Security/First%20Line%20Of%20Defense/'>
+        <a href='./Workshops/Security/First%20Line%20of%20Defense/'>
           <div class='card security' id='medium-card'></div>
         </a>
         <a>
