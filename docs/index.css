@@ -1,3 +1,10 @@
+.neglect {
+  height: 0px !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  visibility: hidden !important;
+}
+
 /* Main Containers */
 .main-container {
   display: flex;
@@ -41,11 +48,11 @@
   align-items: center;
   justify-items: center;
   text-align: center;
-  overflow-y: auto;
+  overflow-y: scroll;
   overflow-x: hidden;
   max-height: 100%;
   gap: 20px;
-  padding: 10px;
+  padding: 0px 10px 0px 10px;
 }
 
 /* Card Styles */
@@ -67,7 +74,7 @@
 }
 
 .card:hover {
-  background-color: rgba(200, 150, 255, 0.45);
+  background-color: rgba(176, 99, 175, 1);
   transform: translateY(-5px);
   transition: background-color 0.5s, transform 0.5s;
 }
@@ -82,11 +89,13 @@
   width: 100%;
   max-height: 30vw;
   padding: 20px;
+  padding: 20px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  justify-items: center;
   justify-items: center;
 }
 
@@ -105,8 +114,8 @@
 
 /* Medium Card */
 #medium-card {
-  height: calc(15vw - 20px);
-  width: 26vw;
+  height: calc(15vw - 10px);
+  width: 30vw;
   padding: 20px;
 }
 
@@ -159,13 +168,20 @@
 }
 
 .coming-soon {
-  background: rgb(17, 15, 17, 0.5);
+  background: rgb(78, 42, 184);
 }
 
 /* Media Queries */
 
-/* 400px */
-@media (max-width: 400px) {
+/* 350px */
+@media (max-width: 350px) {
+  #big-card {
+    min-height: 450px;
+  }
+}
+
+/* 420px */
+@media (max-width: 420px) {
   .main-container {
     margin: -50px 0px 0px 0px;
   }
@@ -176,7 +192,7 @@
   }
 
   #medium-card {
-    height: 34vw;
+    height: 30vw;
     width: 60vw;
   }
 
@@ -187,25 +203,14 @@
   .title h1 {
     font-size: 20px;
   }
-}
 
-/* 350px */
-@media (max-width: 350px) {
-  #big-card {
-    min-height: 450px;
-  }
   .title {
     height: 90px;
   }
-}
 
-/* 350px - 420px */
-@media (min-width: 350px) and (max-width: 420px) {
-  #big-card {
-    min-height: 425px;
-  }
-  .title {
-    height: 90px;
+  #big-card h2,
+  #medium-card h2 {
+    font-size: 15px !important;
   }
 }
 
@@ -216,6 +221,10 @@
   }
   .title {
     height: 90px;
+  }
+  #big-card h2,
+  #medium-card > h2 {
+    font-size: 15px;
   }
 }
 
@@ -244,7 +253,7 @@
   }
 }
 
-/* Small Screen */
+/* Vertical layout (815px) - 1 Column */
 @media (max-width: 815px) {
   #heading {
     grid-template-columns: 1fr;
@@ -265,8 +274,17 @@
   }
 
   #medium-card {
-    height: 34vw;
+    height: 30vw;
     width: 60vw;
+  }
+
+  #big-card h2,
+  #medium-card h2 {
+    font-size: 18px;
+  }
+
+  #medium-card h2 {
+    margin: 0;
   }
 
   .child-container {
@@ -279,16 +297,12 @@
   .title,
   .main-container h2 {
     justify-content: center;
+    justify-content: center;
     text-align: center;
   }
 
   .title h1 {
     font-size: 28.8px;
-  }
-
-  #big-card h2,
-  #medium-card h2 {
-    font-size: 20px;
   }
 }
 
@@ -310,12 +324,26 @@
 
   #big-card {
     max-height: 340px;
+    max-height: 340px;
     width: 70vw;
   }
 
   #medium-card {
-    height: 19vw;
-    width: 35vw;
+    height: 17.5vw;
+    width: calc(35vw - 10px);
+  }
+
+  .title,
+  .main-container h2 {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* Vertical Layout (1150px) - 2 Columns */
+@media (max-width: 1150px) {
+  .parent-container {
+    gap: 20px;
   }
 
   .child-container {
@@ -325,10 +353,8 @@
     gap: 20px;
   }
 
-  .title,
-  .main-container h2 {
-    justify-content: center;
-    text-align: center;
+  .scroll-wrapper {
+    overflow: visible;
   }
 }
 
@@ -343,7 +369,7 @@
   }
 
   #medium-card {
-    height: calc(15vw - 20px);
+    height: calc(15vw - 5px);
   }
 
   .child-container {
