@@ -41,7 +41,7 @@
   align-items: center;
   justify-items: center;
   text-align: center;
-  overflow-y: auto;
+  overflow-y: scroll;
   overflow-x: hidden;
   max-height: 100%;
   gap: 20px;
@@ -164,6 +164,16 @@
 
 /* Media Queries */
 
+/* 350px */
+@media (max-width: 350px) {
+  #big-card {
+    min-height: 450px;
+  }
+  .title {
+    height: 90px;
+  }
+}
+
 /* 400px */
 @media (max-width: 400px) {
   .main-container {
@@ -186,16 +196,6 @@
 
   .title h1 {
     font-size: 20px;
-  }
-}
-
-/* 350px */
-@media (max-width: 350px) {
-  #big-card {
-    min-height: 450px;
-  }
-  .title {
-    height: 90px;
   }
 }
 
@@ -318,13 +318,6 @@
     width: calc(35vw - 10px);
   }
 
-  .child-container {
-    flex-direction: row;
-    justify-content: center;
-    max-height: fit-content;
-    gap: 20px;
-  }
-
   .title,
   .main-container h2 {
     justify-content: center;
@@ -336,6 +329,17 @@
 @media (max-width: 1150px) {
   .parent-container {
     gap: 20px;
+  }
+
+  .child-container {
+    flex-direction: row;
+    justify-content: center;
+    max-height: fit-content;
+    gap: 20px;
+  }
+
+  .scroll-wrapper {
+    overflow: visible;
   }
 }
 
