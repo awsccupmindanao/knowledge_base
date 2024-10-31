@@ -1,3 +1,4 @@
+/* Main Containers */
 .main-container {
   display: flex;
   flex-direction: column;
@@ -5,9 +6,8 @@
   gap: 15px;
 }
 
-.main-container > h1:first-child {
-  min-height: fit-content;
-  margin-bottom: 0;
+.main-container p {
+  font-size: 12px;
 }
 
 .parent-container {
@@ -16,6 +16,7 @@
   gap: 10px;
 }
 
+/* Headings and Body Layout */
 #heading {
   grid-template-columns: 2fr 1fr;
 }
@@ -25,6 +26,7 @@
   justify-items: center;
 }
 
+/* Child Container */
 .child-container {
   display: flex;
   align-content: center;
@@ -32,6 +34,7 @@
   max-height: 30vw;
 }
 
+/* Scroll Wrapper */
 .scroll-wrapper {
   display: flex;
   flex-direction: column;
@@ -45,6 +48,7 @@
   padding: 10px;
 }
 
+/* Card Styles */
 .card {
   position: relative;
   border-radius: 25px;
@@ -55,8 +59,6 @@
     rgb(176, 99, 175) 20%,
     rgb(62, 50, 193) 100%
   );
-  height: fit-content;
-  width: fit-content;
   color: white;
   text-align: center;
   align-content: center;
@@ -75,26 +77,48 @@
   transition: background-color 0.1s;
 }
 
+/* Big Card */
 #big-card {
   width: 100%;
   max-height: 30vw;
-  padding: 20px 20px 200px 20px;
+  padding: 20px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  justify-items: center;
 }
 
 #big-card > h1 {
   padding-top: 15px;
 }
 
+#big-card p {
+  margin-top: 20px;
+}
+
+#big-card > h2 {
+  margin-bottom: -10px;
+  font-weight: bolder;
+}
+
+/* Medium Card */
 #medium-card {
   height: calc(15vw - 20px);
   width: 26vw;
   padding: 20px;
 }
+
+#medium-card > h2 {
+  margin-bottom: 30px;
+}
+
+#medium-card:hover {
+  opacity: 90%;
+}
+
+/* Small Card */
 #small-card {
   height: 9vw;
   width: 16vw;
@@ -102,6 +126,26 @@
   font-size: 12px;
 }
 
+/* Title Styles */
+.title {
+  position: relative;
+  display: flex;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  line-height: 2;
+  height: 60px;
+}
+
+.title h1 {
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+#logo {
+  width: 15vw;
+}
+
+/* Special Classes */
 .computing {
   background: url("./Workshops/Cloud Computing/Backbone of AWS/img/banner.png")
     no-repeat center center;
@@ -118,36 +162,90 @@
   background: rgb(17, 15, 17, 0.5);
 }
 
-#medium-card > h2 {
-  margin-bottom: 30px;
-}
-
-#medium-card:hover {
-  opacity: 90%;
-}
-
-#big-card > h2 {
-  margin-bottom: -10px;
-}
-
-.title {
-  padding-top: 15px;
-  padding-bottom: 5px;
-  height: 30px;
-  font-weight: bolder;
-}
-
-.main-container p {
-  font-size: 12px;
-}
-
-#logo {
-  width: 15vw;
-}
 /* Media Queries */
 
-/* Mobile Devices */
-@media (max-width: 700px) {
+/* 400px */
+@media (max-width: 400px) {
+  .main-container {
+    margin: -50px 0px 0px 0px;
+  }
+
+  #big-card {
+    min-height: 460px;
+    width: 60vw;
+  }
+
+  #medium-card {
+    height: 34vw;
+    width: 60vw;
+  }
+
+  #big-card p {
+    font-size: 10.5px;
+  }
+
+  .title h1 {
+    font-size: 20px;
+  }
+}
+
+/* 350px */
+@media (max-width: 350px) {
+  #big-card {
+    min-height: 450px;
+  }
+  .title {
+    height: 90px;
+  }
+}
+
+/* 350px - 420px */
+@media (min-width: 350px) and (max-width: 420px) {
+  #big-card {
+    min-height: 425px;
+  }
+  .title {
+    height: 90px;
+  }
+}
+
+/* 420px - 500px */
+@media (min-width: 420px) and (max-width: 500px) {
+  #big-card {
+    min-height: 410px;
+  }
+  .title {
+    height: 90px;
+  }
+}
+
+/* 500px - 575px */
+@media (min-width: 500px) and (max-width: 575px) {
+  #logo {
+    width: 100px;
+  }
+
+  #big-card {
+    min-height: 400px;
+    width: 60vw;
+  }
+
+  #big-card h2,
+  #medium-card h2 {
+    font-size: 18px;
+  }
+
+  .title h1 {
+    font-size: 15px;
+  }
+
+  .title {
+    height: 90px;
+  }
+}
+
+/* Small Screen */
+@media (max-width: 815px) {
   #heading {
     grid-template-columns: 1fr;
     justify-items: center;
@@ -162,16 +260,11 @@
   }
 
   #big-card {
-    max-height: 400px;
+    max-height: 350px;
     width: 60vw;
   }
 
   #medium-card {
-    height: 34vw;
-    width: 60vw;
-  }
-
-  #small-card {
     height: 34vw;
     width: 60vw;
   }
@@ -183,14 +276,24 @@
     gap: 20px;
   }
 
-  .main-container h1,
+  .title,
   .main-container h2 {
+    justify-content: center;
     text-align: center;
+  }
+
+  .title h1 {
+    font-size: 28.8px;
+  }
+
+  #big-card h2,
+  #medium-card h2 {
+    font-size: 20px;
   }
 }
 
 /* Medium Screen */
-@media (min-width: 700px) and (max-width: 1050px) {
+@media (min-width: 815px) and (max-width: 1150px) {
   #heading {
     grid-template-columns: 1fr;
     justify-items: center;
@@ -206,17 +309,12 @@
   }
 
   #big-card {
-    max-height: 325px;
+    max-height: 340px;
     width: 70vw;
   }
 
   #medium-card {
     height: 19vw;
-    width: 35vw;
-  }
-
-  #small-card {
-    height: 20vw;
     width: 35vw;
   }
 
@@ -227,29 +325,29 @@
     gap: 20px;
   }
 
-  h1,
-  h2 {
+  .title,
+  .main-container h2 {
+    justify-content: center;
     text-align: center;
   }
 }
 
 /* Tablet Devices */
-@media (min-width: 1050px) and (max-width: 1300px) {
+@media (min-width: 1150px) and (max-width: 1300px) {
   #body {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-  #small-card {
-    height: 15vw;
-    width: 25vw;
+  #big-card {
+    max-height: calc(30vw + 10px);
   }
 
-  #big-card {
-    max-height: 30vw;
+  #medium-card {
+    height: calc(15vw - 20px);
   }
 
   .child-container {
-    max-height: 30vw;
+    max-height: calc(30vw + 10px);
     flex-direction: row;
     justify-content: center;
     gap: 20px;

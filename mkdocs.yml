@@ -1,5 +1,5 @@
 site_name: ALC Knowledge Base
-site_url: https://AWS-Learning-Club-UP-Mindanao.github.io/knowledge_base/
+site_url: https://alc-knowledge-base.vercel.app/
 theme:
   logo: assets/logo/alc_logo.png
   favicon: assets/logo/alc_logo.png
