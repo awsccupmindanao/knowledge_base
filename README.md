@@ -7,6 +7,8 @@ Your one-stop AWS Documentation for our AWS Workshops!
 - [@prcsmae [Precious Mae Jomuad]](https://github.com/prcsmae)
 - [@ASPactores [Anakin Sky Pactores]](https://github.com/ASPactores)
 - [@Maakkkuu [Mark Jaily Peña]](https://github.com/Maakkkuu)
+- [@Celeru00 [Francis Reid Arranguez]](https://github.com/Celeru00)
+- [@ThatDott [Justin Veloso]](https://github.com/ThatDott)
 
 ### Authors:
 
