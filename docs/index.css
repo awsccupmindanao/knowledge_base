@@ -45,7 +45,7 @@
   overflow-x: hidden;
   max-height: 100%;
   gap: 20px;
-  padding: 10px;
+  padding: 0px 10px 0px 10px;
 }
 
 /* Card Styles */
@@ -105,8 +105,8 @@
 
 /* Medium Card */
 #medium-card {
-  height: calc(15vw - 20px);
-  width: 26vw;
+  height: calc(15vw - 10px);
+  width: 30vw;
   padding: 20px;
 }
 
@@ -176,7 +176,7 @@
   }
 
   #medium-card {
-    height: 34vw;
+    height: 30vw;
     width: 60vw;
   }
 
@@ -265,7 +265,7 @@
   }
 
   #medium-card {
-    height: 34vw;
+    height: 30vw;
     width: 60vw;
   }
 
@@ -314,8 +314,8 @@
   }
 
   #medium-card {
-    height: 19vw;
-    width: 35vw;
+    height: 17.5vw;
+    width: calc(35vw - 10px);
   }
 
   .child-container {
@@ -332,6 +332,13 @@
   }
 }
 
+/* All common media queries for vertical layout starts here */
+@media (max-width: 1150px) {
+  .parent-container {
+    gap: 20px;
+  }
+}
+
 /* Tablet Devices */
 @media (min-width: 1150px) and (max-width: 1300px) {
   #body {
@@ -339,15 +346,11 @@
   }
 
   #big-card {
-    max-height: calc(30vw + 10px);
-  }
-
-  #medium-card {
-    height: calc(15vw - 20px);
+    max-height: 30vw;
   }
 
   .child-container {
-    max-height: calc(30vw + 10px);
+    max-height: 30vw;
     flex-direction: row;
     justify-content: center;
     gap: 20px;
