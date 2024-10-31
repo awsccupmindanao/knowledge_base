@@ -4,10 +4,9 @@ hide:
   - toc
 ---
 
-<link href="index.css" rel="stylesheet"></link>
-
 <div class='main-container'>
-<div class='title'><h1><b>Welcome to AWS Knowledge Base!</b></h1></div>
+  <h1 class='neglect'></h1>
+  <div class='title'><h1><b>Welcome to AWS Knowledge Base!</b></h1></div>
   <div class='parent-container' id='heading'>
     <div class='card' id='big-card'>
         <img src='assets/logo/alc_logo.png' id='logo'>
